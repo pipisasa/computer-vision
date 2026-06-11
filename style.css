@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+main {
+  width: min(960px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+#stage {
+  position: relative;
+  width: 100%;
+  /* Placeholder until JS sets the camera's real aspect ratio */
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+#video,
+#overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* Mirror so the view behaves like a mirror */
+  transform: scaleX(-1);
+}
+
+#video {
+  /* Stage matches the camera aspect ratio (set from JS), so no cropping */
+  object-fit: fill;
+}
+
+#loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 1.1rem;
+}
+
+#loading.hidden {
+  display: none;
+}
+
+#hud {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hud-item {
+  flex: 1;
+  min-width: 120px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hud-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8b949e;
+}
+
+.hud-value {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
