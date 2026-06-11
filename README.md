@@ -1,5 +1,8 @@
 # Finger Tracking
 
+**[▶ Live demo](https://pipisasa.github.io/computer-vision/)** — allow camera
+access and raise your hands.
+
 Real-time hand and finger tracking in the browser. Tracks up to two hands with
 the camera, draws hand skeletons, counts raised fingers, recognizes simple
 gestures, and connects matching fingertips across hands — the space between
